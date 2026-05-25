@@ -1,0 +1,77 @@
+seed: 42
+
+model_defaults:
+  embedding_dim: 256
+  routing_mode: soft
+  expert_type: linear
+  orthogonal_projection: learnable
+  orthogonal_regularization_weight: 0.01
+  diversity_regularization_weight: 0.01
+  load_balance_weight: 0.01
+  use_projected_features_for_experts: true
+  tree_depth: 2
+  tabularizer:
+    enabled: true
+    input_type: tabular
+    replace_infinite: true
+    drop_columns: []
+    keep_columns:
+  preprocessing:
+    handle_missing: median
+    scaling: standard
+  embedding:
+    enabled: true
+    mode: fixed
+    projection_strategy: random_orthogonal
+    output_dim:
+    proportion: 1.0
+    explained_variance_ratio:
+    whiten: false
+    random_state: 42
+  adapter:
+    type: linear
+    hidden_dims: []
+    dropout: 0.0
+  projection:
+    type: learnable
+    apply_to: fused
+  routing:
+    mode: soft
+    depth: 2
+    temperature: 1.0
+    temperature_schedule: constant
+    temperature_end:
+    temperature_schedule_epochs:
+  expert:
+    type: linear
+    hidden_dims: [128]
+    dropout: 0.1
+    use_projected_features: true
+  aggregator:
+    type: weighted_logits
+    inference_top_k:
+    renormalize_after_top_k: true
+  training:
+    batch_size: 1024
+    epochs: 20
+    lr: 0.001
+    weight_decay: 0.0001
+    early_stopping_patience: 5
+    orthogonal_regularization_weight: 0.01
+    diversity_regularization_weight: 0.01
+    load_balance_weight: 0.01
+    regularization_schedule: constant
+    regularization_warmup_epochs: 0
+    selection_metric: f1_macro
+    class_weighting: balanced
+    class_weight_cap:
+    rare_class_boost_factor: 1.0
+    rare_class_threshold_ratio: 0.5
+    classification_loss: cross_entropy
+    focal_gamma: 2.0
+    label_smoothing: 0.0
+    confidence_penalty_weight: 0.0
+    inference_temperature: 1.0
+    gradient_clip_norm:
+    device: cpu
+    end_to_end: true

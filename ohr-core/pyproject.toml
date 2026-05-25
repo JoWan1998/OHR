@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ohr-core"
+authors = [{ name = "Jose Wannan" }]
+version = "0.2.2"
+description = "Core Python package for Orthogonal Honeycomb Routing on tabular classification."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "GPL-3.0-only" }
+keywords = ["machine-learning", "classification", "pytorch", "routing", "tabular-learning"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "Intended Audience :: Education",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+  "numpy>=1.24",
+  "pandas>=2.0",
+  "PyYAML>=6.0",
+  "scikit-learn>=1.3",
+  "joblib>=1.3",
+  "torch>=2.1",
+]
+
+[project.optional-dependencies]
+dev = [
+  "build>=1.2",
+  "twine>=5.1",
+  "pytest>=8.0",
+  "jupyter>=1.0",
+  "ipykernel>=6.0",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"ohr.resources.configs" = ["*.yaml"]
