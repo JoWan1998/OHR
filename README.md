@@ -78,8 +78,6 @@ Este repositorio sirve para compartir:
 2. una **evaluacion experimental compacta** sobre CICIDS;
 3. el contexto suficiente para reproducir una comparacion academica razonable.
 
-No pretende contener todo el workspace original de desarrollo ni toda la infraestructura auxiliar usada durante el trabajo.
-
 ## Instalacion
 
 Desde la raiz de esta carpeta:
@@ -125,29 +123,7 @@ El notebook esta pensado para comparar:
 - `LogisticRegression`
 - `LinearSVC`
 
-## Que Debe Revisar Un Evaluador Externo
-
-Si alguien solo quiere evaluar el repositorio, lo importante es:
-
-- instalar `ohr-core`
-- apuntar el notebook a la carpeta local del dataset
-- ejecutar la comparacion
-- revisar:
-  - metricas globales
-  - matrices de confusion
-  - comparacion de predicciones
-  - metricas internas de OHR
-
-## Relacion Con el trabajo
-
-Este repositorio esta organizado para apoyar una discusion academica sobre tres ejes:
-
-1. **rendimiento predictivo**
-2. **eficiencia computacional**
-3. **comportamiento interno del flujo estructurado**
-
-Por eso la capa experimental no se limita a entrenar modelos, sino que tambien conserva trazabilidad y diagnosticos del routing cuando se usa OHR.
-
+  
 ## Licencia
 
 Este repositorio se distribuye bajo la **GNU General Public License v3.0**.
